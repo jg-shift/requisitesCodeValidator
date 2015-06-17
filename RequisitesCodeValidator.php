@@ -30,7 +30,7 @@ class RequisitesCodeValidator extends Validator
     public $allowEmpty = true;
 
     //здесь определяем какой именно реквизит надо валидировать и раскидываем по вспомогательным методам
-    protected function validateAttribute($object, $attribute)
+    public function validateAttribute($object, $attribute)
     {
         $value = $object->$attribute; //если ничего не указано
         if ($this->allowEmpty && $this->isEmpty($value))
@@ -380,7 +380,7 @@ class RequisitesCodeValidator extends Validator
         $weightFactor = array(7, 1, 3, 7, 1, 3, 7, 1, 3, 7, 1, 3, 7, 1, 3, 7, 1, 3, 7, 1, 3, 7, 1);
 
         $i        = 0;
-        $checkSum = 0;
+        $checkSum = '0';
         while ($i <= 22) //находим контрольную сумму
         {
             $checkSum = $checkSum + substr($value, $i, 1) * $weightFactor[$i];
