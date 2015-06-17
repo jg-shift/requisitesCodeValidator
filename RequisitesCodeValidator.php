@@ -1,8 +1,11 @@
 <?php
+namespace yii\validators;
+use Yii;
+use yii\validators\Validator;
 /**
  * Валидатор, проверяющий банковские реквизиты
  */
-class RequisitesCodeValidator extends CValidator
+class RequisitesCodeValidator extends Validator
 {
     /**
      * @var $type= - сюда передаётся тип реквизита, которвый нужно валидировать
